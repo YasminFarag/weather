@@ -5,30 +5,69 @@ import Forecasting from './components/Forecasting';
 
 
 class App extends Component {
-
   
-  // fetch(`http://api.openweathermap.org/data/2.5/weather?q=&APPID${apiKey}=&units=metric`)
+
+    state ={
+      input:'',
+      city:'',
+      country:'',
+      temp:'',
+      humidity:'',
+      wind:''
+
+    }
+  
+
+
+
+    weather = async(e) =>{
+      e.preventDefault()
+      const city = e.target.elements.city.value
+      const api= await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=metric`)
+    
+      const respond = api.json()
+    
+      console.log(respond);
+      
+    
+  //   fetch(`http://api.openweathermap.org/data/2.5/weather?q=berlin&APPID=${apiKey}&units=metric`)
   
   // .then(res => console.log(res))
-  // .then(data=> console.log(data);
+  // .then(data=> console.log(data)
   
       
  
   // )
 
-  // .catch(error => console.log(error))      
-
-
-weather = async(e) =>{
-  e.preventDefault()
-  // const city = e.target.elements.city.value
-  const api= await fetch(`http://api.openweathermap.org/data/2.5/weather?q=berlin&APPID=${apiKey}&units=metric`)
-
-  const respond = api.json()
-
-  console.log(respond);
+  // .catch(error => console.log(error))  
   
-}
+  this.setState({
+    city: respond.name,
+    country:respond.sys.country,
+      temp:respond.main.temp,
+      humidity:respond.main.humidity,
+      wind:respond.wind.speed
+
+
+    
+  })
+
+  }
+
+  handleChange=(e)=>{
+    const inputText= e.target.value
+    this.setState({
+      input: inputText
+    })
+    console.log("text input", inputText);
+    
+
+  }
+
+  
+  
+
+
 
   render() {
     return (
