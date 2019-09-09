@@ -22,8 +22,10 @@ class App extends Component {
 
     weather = async(e) =>{
       e.preventDefault()
-      const city = e.target.elements.city.value
-      const api= await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=metric`)
+      const city = e.target.elements.city.value;
+      const country= e.target.elements.country.value;
+      
+      const api= await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${apiKey}&units=metric`)
     
       const respond = api.json()
     
@@ -43,27 +45,18 @@ class App extends Component {
   
   this.setState({
     city: respond.name,
-    country:respond.sys.country,
-      temp:respond.main.temp,
-      humidity:respond.main.humidity,
-      wind:respond.wind.speed
+    country: respond.sys.country,
+    temp:respond.main.temp,
+    humidity:respond.main.humidity,
+    wind:respond.wind.speed
 
 
     
-  })
+  });
 
   }
 
-  handleChange=(e)=>{
-    const inputText= e.target.value
-    this.setState({
-      input: inputText
-    })
-    console.log("text input", inputText);
-    
-
-  }
-
+  
   
   
 
@@ -74,7 +67,7 @@ class App extends Component {
       <div className="App">
       Welcome To Your Weather App
       
-      <Forecasting result={this.weather}  />
+      <Forecasting result={this.weather} city={this.state.city} country={this.state.country} temp={this.state.temp} humidity={this.state.humidity} wind={this.state.wind}  />
     </div>
 
     )
