@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import Forecasting from './components/Forecasting';
 
-import yygg from './images/yygg.png'
+
 
 
 
@@ -19,21 +19,7 @@ class App extends Component {
       image:''
 
     }
-    // weather = async(e) =>{
-    //   e.preventDefault()
-    //   const city = e.target.elements.city.value;
-      
-      
-    //   const api= await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
     
-    //   const response = api.json();
-    
-    //   console.log(response);
-    //   console.log('sys:',response.sys);
-      
-      
- // }
-   
     weather=(e)=>{
       e.preventDefault()
     const city = e.target.elements.city.value;
@@ -63,10 +49,6 @@ class App extends Component {
       console.log('input is : ',textInput);
       
     }
-
-   
-  
-
   render() {
     // let inputStyle= {backgroundImage: `url({yygg})`}
     // if(this.state.description === 'clear sky'){

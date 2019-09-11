@@ -40,7 +40,7 @@ body{
   background-size: cover;
   background-repeat: no-repeat
 }
-.Rain, .Mist, .Drizzle{
+.Rain, .Mist, .Drizzle, .light, .moderate {
   height: 100vh;
   background-image: url(./images/cloudy.jpeg);
   background-size: cover;
@@ -58,4 +58,16 @@ body{
   background-image: url(./images/snowy.jpg);
   background-size: cover;
   background-repeat: no-repeat
+}
+
+/* Forecasting component */
+
+.result{
+  display: flexbox;
+  justify-content: center;
+  width:300px;
+  height:max-content;
+  border:1px solid 
+  
+
 }
