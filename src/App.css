@@ -63,11 +63,12 @@ body{
 /* Forecasting component */
 
 .result{
-  display: flexbox;
-  justify-content: center;
-  width:300px;
-  height:max-content;
-  border:1px solid 
+  display: inline-block;
+  margin:40px;
+  background-color: cornflowerblue;
+  border-radius: 10px;
+  font-size: 20px;
   
+  
+} 
 
-}

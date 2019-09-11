@@ -10,13 +10,14 @@ let apiKey = 'e8543a00592ac6e69e0a81d490af4226'
 class App extends Component {
    state ={
       input:'',
+      date: '',
       city:'',
       country:'',
       description:'',
       temp:'',
       humidity:'',
       wind:'',
-      image:''
+      
 
     }
     
@@ -27,6 +28,7 @@ class App extends Component {
   
   .then(res => res.json())
   .then(data=>  this.setState({
+    date: new Date(),
     city: data.name,
      country: data.sys.country,
      description: data.weather[0].description,
@@ -34,6 +36,7 @@ class App extends Component {
     humidity:data.main.humidity,
     wind:data.wind.speed,
     input:'',
+    
 }, () => console.log('data',data)
 ) 
   )
@@ -49,16 +52,21 @@ class App extends Component {
       console.log('input is : ',textInput);
       
     }
+
+    componentDidMount(){
+      this.setState({
+        date:''
+      })
+
+    }
   render() {
-    // let inputStyle= {backgroundImage: `url({yygg})`}
-    // if(this.state.description === 'clear sky'){
-    //    return inputStyle.backgroundImage= <img src={yygg} width="100%" height="100%" alt="yygg" />
-    // }
+    
     return (
       <div className={"App "+ (this.state.description)} >
       Welcome To Your Weather App
       
       <Forecasting weather={this.weather} 
+                    date={this.state.date.toLocaleString()}
                     city={this.state.city} 
                     country={this.state.country} 
                     description={this.state.description}
