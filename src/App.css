@@ -1,17 +1,61 @@
+html , body{
+  /* height: 100vh; */
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+
+
+
+}
+
+
 body{
   text-align: center;
-  background-image: url('./water-blue-ocean.jpg');
-  background-size: cover;
+  background-image: url(./images/water-blue-ocean.jpg);
+  background-size: auto;
   background-repeat: no-repeat;
-
+ 
  
 
 }
 
 
 .App{
+  /* height: 100vh; */
+  width:100%;
   color: white;
   font-size: 30px;
-  font-style: italic
+  font-style: italic;
+  
 }
-
+.clear{
+  height: 100vh; 
+  background-image: url(./images/sunny.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+.clouds{
+  height: 100vh;
+  background-image: url(./images/clouds.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat
+}
+.Rain, .Mist, .Drizzle{
+  height: 100vh;
+  background-image: url(./images/cloudy.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat
+}
+.thunderstorm{
+  height: 100vh;
+  background-image: url(./images/lightning.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat
+  
+}
+.Snow{
+  height:100vh;
+  background-image: url(./images/snowy.jpg);
+  background-size: cover;
+  background-repeat: no-repeat
+}
