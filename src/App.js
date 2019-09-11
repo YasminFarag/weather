@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
 import Forecasting from './components/Forecasting';
-//import { async } from 'q';
+
+import yygg from './images/yygg.png'
+
+
 
 let apiKey = 'e8543a00592ac6e69e0a81d490af4226'
 class App extends Component {
@@ -9,9 +12,11 @@ class App extends Component {
       input:'',
       city:'',
       country:'',
+      description:'',
       temp:'',
       humidity:'',
-      wind:''
+      wind:'',
+      image:''
 
     }
     // weather = async(e) =>{
@@ -38,9 +43,11 @@ class App extends Component {
   .then(data=>  this.setState({
     city: data.name,
      country: data.sys.country,
+     description: data.weather[0].description,
     temp:data.main.temp,
     humidity:data.main.humidity,
-    wind:data.wind.speed
+    wind:data.wind.speed,
+    input:'',
 }, () => console.log('data',data)
 ) 
   )
@@ -56,16 +63,23 @@ class App extends Component {
       console.log('input is : ',textInput);
       
     }
+
+   
   
 
   render() {
+    // let inputStyle= {backgroundImage: `url({yygg})`}
+    // if(this.state.description === 'clear sky'){
+    //    return inputStyle.backgroundImage= <img src={yygg} width="100%" height="100%" alt="yygg" />
+    // }
     return (
-      <div className="App">
+      <div className={"App "+ (this.state.description)} >
       Welcome To Your Weather App
       
       <Forecasting weather={this.weather} 
                     city={this.state.city} 
                     country={this.state.country} 
+                    description={this.state.description}
                     temp={this.state.temp} 
                     humidity={this.state.humidity} 
                     wind={this.state.wind}  
