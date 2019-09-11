@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 import './App.css';
 import Forecasting from './components/Forecasting';
-// import { async } from 'q';
+//import { async } from 'q';
 
-
+let apiKey = 'e8543a00592ac6e69e0a81d490af4226'
 class App extends Component {
-  
-
-    state ={
+   state ={
       input:'',
       city:'',
       country:'',
@@ -16,65 +14,70 @@ class App extends Component {
       wind:''
 
     }
-  
-
-
-
-    weather = async(e) =>{
+    // weather = async(e) =>{
+    //   e.preventDefault()
+    //   const city = e.target.elements.city.value;
+      
+      
+    //   const api= await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+    
+    //   const response = api.json();
+    
+    //   console.log(response);
+    //   console.log('sys:',response.sys);
+      
+      
+ // }
+   
+    weather=(e)=>{
       e.preventDefault()
-      const city = e.target.elements.city.value;
-      const country= e.target.elements.country.value;
+    const city = e.target.elements.city.value;
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+  
+  .then(res => res.json())
+  .then(data=>  this.setState({
+    city: data.name,
+     country: data.sys.country,
+    temp:data.main.temp,
+    humidity:data.main.humidity,
+    wind:data.wind.speed
+}, () => console.log('data',data)
+) 
+  )
+  .catch(error => console.log(error)) 
+   
+  
+}
+    handleChange=(e)=>{
+      let textInput=e.target.value
+      this.setState({
+        input: textInput
+      })
+      console.log('input is : ',textInput);
       
-      const api= await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${apiKey}&units=metric`)
-    
-      const respond = api.json()
-    
-      console.log(respond);
-      
-    
-  //   fetch(`http://api.openweathermap.org/data/2.5/weather?q=berlin&APPID=${apiKey}&units=metric`)
+    }
   
-  // .then(res => console.log(res))
-  // .then(data=> console.log(data)
-  
-      
- 
-  // )
-
-  // .catch(error => console.log(error))  
-  
-  this.setState({
-    city: respond.name,
-    country: respond.sys.country,
-    temp:respond.main.temp,
-    humidity:respond.main.humidity,
-    wind:respond.wind.speed
-
-
-    
-  });
-
-  }
-
-  
-  
-  
-
-
 
   render() {
     return (
       <div className="App">
       Welcome To Your Weather App
       
-      <Forecasting result={this.weather} city={this.state.city} country={this.state.country} temp={this.state.temp} humidity={this.state.humidity} wind={this.state.wind}  />
+      <Forecasting weather={this.weather} 
+                    city={this.state.city} 
+                    country={this.state.country} 
+                    temp={this.state.temp} 
+                    humidity={this.state.humidity} 
+                    wind={this.state.wind}  
+                    handleChange={this.handleChange}
+                    input={this.state.input} />
     </div>
 
     )
   }
 }
 
-let apiKey = 'e8543a00592ac6e69e0a81d490af4226'
+
 
 export default App
 
