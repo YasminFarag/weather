@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Forecasting from './components/Forecasting';
+import { WiDaySunny } from 'weather-icons-react';
 
 
 
@@ -17,6 +18,7 @@ class App extends Component {
       temp:'',
       humidity:'',
       wind:'',
+      icon:''
       
 
     }
@@ -32,6 +34,7 @@ class App extends Component {
     city: data.name,
      country: data.sys.country,
      description: data.weather[0].description,
+     icon : data.weather[0].icon,
     temp:data.main.temp,
     humidity:data.main.humidity,
     wind:data.wind.speed,
@@ -60,6 +63,11 @@ class App extends Component {
 
     }
   render() {
+    // if(this.state.description=== 'sunny'){
+    //   return(
+    //    <img src={`http://openweathermap.org/img/w/${this.state.icon}.png`} />
+    //   )
+    // }
     
     return (
       <div className={"App "+ (this.state.description)} >
@@ -70,6 +78,7 @@ class App extends Component {
                     city={this.state.city} 
                     country={this.state.country} 
                     description={this.state.description}
+                    icon={this.state.icon}
                     temp={this.state.temp} 
                     humidity={this.state.humidity} 
                     wind={this.state.wind}  
