@@ -23,6 +23,9 @@ toggleDisplay=()=>{
       borderRadius:'10px',
       fontSize: '20px', 
     }
+
+    const calculate= Math.floor(this.props.temp) 
+
     if(this.state.display === true){
 
 
@@ -38,7 +41,7 @@ toggleDisplay=()=>{
             <span style={inlineStyle}>
               {this.props.date && <span>{this.props.date}</span>}<br />
             {this.props.city  && <span>City: {this.props.city}</span>}<br />
-            {this.props.temp && <span>Temperature: {this.props.temp}</span>}<br />
+            {this.props.temp && <span>Temperature: {calculate}°</span>}<br />
             {/* {this.props.country && <p>Country: {this.props.country}</p>} */}
             {this.props.description && <span>Description:{this.props.description}</span>}
             <img src={`http://openweathermap.org/img/wn/${this.props.icon}.png `} className="" alt="wthr-img" /><br />
