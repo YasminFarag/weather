@@ -22,9 +22,9 @@ body{
 
 .App{
   /* height: 100vh; */
-  width:100%;
+  /* width:100%; */
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   font-style: italic;
   
 }
@@ -64,6 +64,8 @@ body{
 /* Forecasting component */
 
 .result{
+  width: auto;
+  height: auto;
   display: inline-block;
   margin:40px;
   background-color: cornflowerblue;
@@ -72,4 +74,3 @@ body{
   
   
 } 
-

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Forecasting from './components/Forecasting';
-import { WiDaySunny } from 'weather-icons-react';
+//import { WiDaySunny } from 'weather-icons-react';
 
 
 
@@ -30,15 +30,16 @@ class App extends Component {
   
   .then(res => res.json())
   .then(data=>  this.setState({
-    date: new Date(),
-    city: data.name,
-     country: data.sys.country,
-     description: data.weather[0].description,
-     icon : data.weather[0].icon,
-    temp:data.main.temp,
-    humidity:data.main.humidity,
-    wind:data.wind.speed,
-    input:'',
+    
+        date: new Date(),
+        city: data.name,
+        country: data.sys.country,
+        description: data.weather[0].description,
+        icon : data.weather[0].icon,
+        temp:data.main.temp,
+        humidity:data.main.humidity,
+        wind:data.wind.speed,
+        input:'',
     
 }, () => console.log('data',data)
 ) 
@@ -62,6 +63,8 @@ class App extends Component {
       })
 
     }
+
+    
   render() {
     // if(this.state.description=== 'sunny'){
     //   return(
@@ -71,8 +74,8 @@ class App extends Component {
     
     return (
       <div className={"App "+ (this.state.description)} >
-      Welcome To Your Weather App
-      
+        Welcome to Your weather App
+       
       <Forecasting weather={this.weather} 
                     date={this.state.date.toLocaleString()}
                     city={this.state.city} 
@@ -84,6 +87,7 @@ class App extends Component {
                     wind={this.state.wind}  
                     handleChange={this.handleChange}
                     input={this.state.input} />
+                    
     </div>
 
     )
