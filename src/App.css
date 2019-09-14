@@ -26,6 +26,8 @@ body{
   color: white;
   font-size: 20px;
   font-style: italic;
+  padding:30px;
+ 
   
 }
 .clear{
@@ -63,14 +65,15 @@ body{
 
 /* Forecasting component */
 
-.result{
-  width: auto;
-  height: auto;
-  display: inline-block;
-  margin:40px;
-  background-color: cornflowerblue;
+
+button,
+input
+
+{
+  color: gray;
   border-radius: 10px;
-  font-size: 20px;
-  
-  
-} 
+ 
+}
+form{
+  margin:10px;
+}
