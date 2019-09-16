@@ -7,7 +7,7 @@ import Forecasting from './components/Forecasting';
 
 
 
-let apiKey = 'e8543a00592ac6e69e0a81d490af4226'
+
 class App extends Component {
    state ={
       input:'',
@@ -94,7 +94,7 @@ class App extends Component {
   }
 }
 
-
+let apiKey = 'e8543a00592ac6e69e0a81d490af4226'
 
 export default App
 
