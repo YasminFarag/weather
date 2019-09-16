@@ -3,11 +3,6 @@ import './App.css';
 import Forecasting from './components/Forecasting';
 //import { WiDaySunny } from 'weather-icons-react';
 
-
-
-
-
-
 class App extends Component {
    state ={
       input:'',
