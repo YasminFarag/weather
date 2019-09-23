@@ -31,7 +31,7 @@ toggleDisplay=()=>{
             {this.props.temp && <span>Temperature: {calculate}°</span>}<br />
             {/* {this.props.country && <p>Country: {this.props.country}</p>} */}
             {this.props.description && <span>Description: {this.props.description}</span>}
-            <img src={`http://openweathermap.org/img/wn/${this.props.icon}.png `} className="" alt="wthr-img" /><br />
+            <img src={`https://openweathermap.org/img/wn/${this.props.icon}.png `} className="" alt="wthr-img" /><br />
             
             {this.props.humidity && <span>Humidity: {this.props.humidity} %</span>}<br />
           {this.props.wind && <span>Wind Speed: {this.props.wind} Km/hr</span>}<br />
