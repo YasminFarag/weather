@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "./static/css/main.9e56bf4a.chunk.css",
+    "main.js": "./static/js/main.92af5b7b.chunk.js",
+    "main.js.map": "./static/js/main.92af5b7b.chunk.js.map",
+    "runtime~main.js": "./static/js/runtime~main.ced0df89.js",
+    "runtime~main.js.map": "./static/js/runtime~main.ced0df89.js.map",
+    "static/css/2.8209e206.chunk.css": "./static/css/2.8209e206.chunk.css",
+    "static/js/2.83b49cf8.chunk.js": "./static/js/2.83b49cf8.chunk.js",
+    "static/js/2.83b49cf8.chunk.js.map": "./static/js/2.83b49cf8.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.787b9e1c06fc7e44cc949b66c0e5aed2.js": "./precache-manifest.787b9e1c06fc7e44cc949b66c0e5aed2.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/2.8209e206.chunk.css.map": "./static/css/2.8209e206.chunk.css.map",
+    "static/css/main.9e56bf4a.chunk.css.map": "./static/css/main.9e56bf4a.chunk.css.map",
+    "static/media/App.css": "./static/media/water-blue-ocean.21b5a530.jpg",
+    "static/media/bootstrap.min.css": "./static/media/glyphicons-halflings-regular.fa277232.woff"
+  }
+}
