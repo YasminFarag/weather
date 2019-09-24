@@ -21,7 +21,7 @@ class App extends Component {
     weather=(e)=>{
       e.preventDefault()
     const city = e.target.elements.city.value;
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+    fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
   
   .then(res => res.json())
   .then(data=>  this.setState({
