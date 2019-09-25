@@ -13,7 +13,8 @@ class App extends Component {
       temp:'',
       humidity:'',
       wind:'',
-      icon:''
+      icon:'',
+      show: false,
       
 
     }
@@ -21,7 +22,7 @@ class App extends Component {
     weather=(e)=>{
       e.preventDefault()
     const city = e.target.elements.city.value;
-    fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
   
   .then(res => res.json())
   .then(data=>  this.setState({
@@ -35,6 +36,7 @@ class App extends Component {
         humidity:data.main.humidity,
         wind:data.wind.speed,
         input:'',
+        show:true,
     
 }, () => console.log('data',data)
 ) 
@@ -81,7 +83,8 @@ class App extends Component {
                     humidity={this.state.humidity} 
                     wind={this.state.wind}  
                     handleChange={this.handleChange}
-                    input={this.state.input} />
+                    input={this.state.input}
+                    show={this.state.show} />
                     
     </div>
 

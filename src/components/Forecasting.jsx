@@ -24,8 +24,7 @@ toggleDisplay=()=>{
             <button onClick={this.toggleDisplay}>Search</button>
                 
             </form>
-         
-            <span className={this.state.className} >
+         {this.props.show ? <span className={this.state.className} >
               {this.props.date && <span>{this.props.date}</span>}<br />
             {this.props.city  && <span>{this.props.city},{this.props.country}</span>}<br />
             {this.props.temp && <span>Temperature: {calculate}°</span>}<br />
@@ -37,7 +36,8 @@ toggleDisplay=()=>{
           {this.props.wind && <span>Wind Speed: {this.props.wind} Km/hr</span>}<br />
             
             
-            </span>
+            </span> : '' }
+            
             </div>
        
       )
