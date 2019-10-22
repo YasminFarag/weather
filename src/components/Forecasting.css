@@ -1,16 +1,16 @@
+.hidden{
+    display: none
+} 
 
-
-.result{
+ .result{
     width:auto;
     height: auto;
     margin: 30px;
     display:inline-block;
     padding:7px;
     background-color:cornflowerblue;
+    opacity: 0.9;
     border-radius:10px;
     font-size: 20px;
-}
-
-.hidden{
-    display: none
 } 
+
