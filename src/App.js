@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import Forecasting from './components/Forecasting';
 //import { WiDaySunny } from 'weather-icons-react';
-import dot from 'dotenv';
-dot.config()
+// import db from 'dotenv';
+// db.config();
 
 class App extends Component {
    state ={
@@ -24,10 +24,13 @@ class App extends Component {
     weather=(e)=>{
       e.preventDefault()
     const city = e.target.elements.city.value;
-    fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API}&units=metric`)
+    fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e8543a00592ac6e69e0a81d490af4226&units=metric`)
   
   .then(res => res.json())
-  .then(data=>  this.setState({
+  .then(data=>  {
+    console.log(data);
+    
+    this.setState({
     
         date: new Date(),
         city: data.name,
@@ -41,7 +44,7 @@ class App extends Component {
         show:true,
     
 }, () => console.log('data',data)
-) 
+)} 
   )
   .catch(error => console.log(error)) 
    
@@ -65,6 +68,7 @@ class App extends Component {
 
     
   render() {
+    // console.log(process.env)
     // if(this.state.description=== 'sunny'){
     //   return(
     //    <img src={`http://openweathermap.org/img/w/${this.state.icon}.png`} />
